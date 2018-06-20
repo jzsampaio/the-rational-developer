@@ -1,0 +1,227 @@
+#+OPTIONS: toc:2 ^:nil broken-links:mark
+#+TITLE: Recruiting: Notes on Reviewing a Candidates' Paid Project
+#+AUTHOR: JZ
+
+In this document I'd like to list recommendations for the interviewer of a
+paid project code walkthrough. Getting to know a candidate in a 1h interview
+is no obvious task, and I think the collections of questions I present here
+would have helped me when I started.
+
+* Introduction
+
+** Types of Developers
+
+The plot bellow is usually drawn by Todd about the types of candidates which
+we'd like to differentiate:
+
+#+CAPTION: Two types of candidates: type I learns fast, type II has a strong background.
+[[./candidates.png]]
+
+There are usually two types of candidates which we'll stand out during an
+interview:
+
+- The one that is just getting started, but you see potential he'll grow in a
+  fast pace (exponential learning rate, low initial condition)
+- The one that already knows a lot, but will grow in slow pace (linear
+  learning rate, high initial condition)
+
+Todd would rather hire type 1 than 2.
+
+With this framework in mind, the goal of this interview is to:
+
+- Estimate the candidate's initial condition
+- Estimate the candidate's growth rate
+- Figure out whether you'd like to work with the candidate
+
+** Inspiration
+
+The quotes bellow are taken from Todd's writing on "How to hire good
+technologists". Check them (parts 1, 2, and 3) on his LinkedIn.
+
+#+BEGIN_QUOTE
+That's why, for me, the key question is, have they followed their heart? If
+so, and if they're good, then they'll have many more insights, and they'll be
+able to handle almost any problem that you throw at them.
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+search for talent in ways that other people don't look, and you will find
+talent that other people don't see.
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+The two most important factors, by far, were intelligence and honesty.
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+I'll always take a chance on someone with aptitude and attitude.  The best
+evidence of that is how much they've learned in the past few years.
+#+END_QUOTE
+
+* The Interview
+
+I suggest structuring the presentation according to the following organization:
+
+- Initial Talk
+    - Candidate's Background
+    - Learning Process
+    - Rules
+- Code Walkthrough
+- Program Execution Review
+- Final Talk
+
+The next sections contain my notes on each of the these parts.
+
+** Initial Talk
+
+During this first section of the interview you want to:
+    - Give the candidate some time to talk about himself and relax
+    - Figure out the candidate's strongest points so you ask more about this
+      later.
+
+*** Candidate's Background: Tell me about your experience as a developer previous to this project
+
+You need to figure out what is the initial condition of the candidate.
+
+Things you need to find out:
+    - Which programming languages was the candidate most familiar before the
+      project?
+    - Does the candidate have any experience with functional programming
+      languages?
+    - Does the candidate have any experience with web development?
+
+*** Candidate's Background: How was the lerning process?
+
+This may help you learn the growth of rate of the candidate.
+
+Make sure ask:
+    - How many hours did you expend on this project?
+        - You don't want to compare an 80 hours project to a 40 hours
+          project.  Figure out the right bucket to place the outcome of the
+          paid project
+    - Did the candidate spend time learning the tools?
+        - If he did, you know you may ask him about details of the tools
+          later
+    - Did the candidate jump into implementation?
+        - If he did, you know asking about F# details is probably not a good
+          idea
+    - Of the things you've learned, which ones did you like the most?
+        - He probably knows more about this stuff than others. Later, ask him
+          about whatever he mentions here
+    - Would you describe the architecture of your project? How is each module
+      used to achieve your goal?
+    - Tell me about the dependencies of your project. How is each one used to
+      achieve your goal?
+    - *WARNING* Orient the previous 2 questions in a 'why did you use/do
+      this' fashion. Not in a 'what is this'.
+        - "this architecture and dependencies were copied from a tutorial" is
+          a totally great answer.
+
+*** Explain the rules
+
+Try to help the candidate not screw the presentation of the code.
+
+    - I recommend you talk to me all the time. Don't change screen without
+      explaining what you're doing.
+    - REVIEW THIS: Walk through your code as if explaining to a teammate who
+      is about to assume your work. Don't assume your teammate is master of
+      the language. Comment any interesting F# feature you've used.
+
+"That is all very interesting, <candidate_name>. Thanks for sharing. Now,
+let's take a look at your code. Before we get started, let me tell you what I
+want from you. I need you to show me your entire project. In doing so, you
+should expend the most time on the parts that you find the most interesting
+and relevant. I'll not be strict about time, but you should try to cover all
+you want in about 30 minutes. Is this clear? Please take a moment to plan
+your presentation and as soon as you are ready, we'll get started."
+
+** The Code Walkthrough
+
+Basically the recommendation is not to give them an easy time. In doing so,
+create opportunities to them to show you how great they are. If the candidate
+is not handling well, alleviate the pressure - you don't want to scare the
+candidate.
+
+*** What not to do
+
+On my first two interviews I asked the candidates about parts of the code
+that were not to clear to me. The first candidate had all the answers, because
+he's likely asked all these questions himself while developing. The second
+candidate had a totally different approach and couldn't confidently answer
+most of my consecutive questions.
+
+*** Questioning the cadidate is fine, but stop the inquisition if the candidate is not being able to answer them
+
+Not being able to answer consecutive questions may give the candidate the
+impression that he/she is not doing well. The candidate will enter into a
+'bad mood' in which he'll not be able to show you how great he is.
+
+*** If the candidate failed at implementing a feature, or answering something, make sure he knows that this is totally fine
+
+Comment things like:
+    - "No problem, those things are hard"
+    - "Don't mind it, these things take time to master"
+
+The point is not to scare the candidate. Make sure he's in a good mood to show
+you how awesome he is.
+
+*** Which questions to ask? Let te candidate tell you!
+
+Hopefully the talk before the walkthrough will give you an idea on what the
+candidate has learned the most. Let the candidate talk about the things that
+he wants to talk. Have you noticed that he's mastered one tool more than the
+other?  Go after the tool he's learned the most.
+
+Try not to bias the interview by trying to follow a path that worked with
+another candidate.
+
+Don't get biased by a candidate that simply already knows too much.
+
+** Program Review
+
+You need to see the program working. Don't take too much time on this, though.
+
+Ask the candidate to clone the project from the repo, compile and run. If
+things go wrong, give the candidate a minute or two to work on it. If things
+don't work well, allow him to go back to his previous installation. Look for
+the list of requested features and errors during the execution.
+
+** Final Talk
+
+"It seems everything is working as expected. That's awesome, <candidate>!
+Let me now ask you a couple of things."
+
+*** How would you improve your current solution had you more time to work on it? Really, if this was to go live, what would you do to make most money out of it?
+
+Grasp the candidate's intuition on how to grow computer systems.
+
+*** Any final thought about the Proejct? Please take the time to think about it.
+
+Candidates have usually answered "No" to this. Give them some options:
+
+Maybe give them options:
+    - "what did you like/didn't like about this project"
+    - "what you've done differently"
+    - "what about your approach worked, what didn't work"
+
+*** Ending the Interview
+
+Recall you may work with the candidate for years to come. You definitely
+want to end the meeting in a friendly way.
+
+#+BEGIN_QUOTE
+{candidate_full_name}, I appreciate your time and your interest into
+Brick Abode's hiring process.
+
+Before I leave, I'd like to congratulate you on delivering the project. We
+know you needed to learn *a bunch* on the process, and this was precisely our
+point with all this.  It is totally fine that some features would be missing,
+and I honestly think you did a great job here! I particularly liked your
+approach (comment/solution) on A, and B. Well done, sir/miss.
+
+I will send Eduardo my feedback and he will get in contact with you anytime
+soon.
+
+I wish you the best of luck and good bye. Have a great day (morning, afteroom,
+weekend).
+#+END_QUOTE
