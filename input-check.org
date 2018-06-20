@@ -1,0 +1,9 @@
+2018, June 20th
+
+Code should be robust to error. All Code?
+
+Guidelines:
+
+- public calls should check for malformed input
+- private calls should not
+- the hard-wiring of private calls shall be tested by unit tests
